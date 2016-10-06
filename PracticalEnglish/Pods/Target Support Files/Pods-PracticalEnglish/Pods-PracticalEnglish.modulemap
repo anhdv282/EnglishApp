@@ -1,0 +1,6 @@
+framework module Pods_PracticalEnglish {
+  umbrella header "Pods-PracticalEnglish-umbrella.h"
+
+  export *
+  module * { export * }
+}
