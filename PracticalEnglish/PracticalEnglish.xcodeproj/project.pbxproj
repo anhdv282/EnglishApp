@@ -45,6 +45,8 @@
 		04B61B081D9E0DE500C43770 /* MenuQuestionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04B61B061D9E0DE500C43770 /* MenuQuestionTableViewCell.xib */; };
 		04B61B0C1D9E126500C43770 /* QuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B61B0A1D9E126500C43770 /* QuestionTableViewCell.swift */; };
 		04B61B0D1D9E126500C43770 /* QuestionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04B61B0B1D9E126500C43770 /* QuestionTableViewCell.xib */; };
+		04F1AAF71DA79136006FA87D /* PE_Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F1AAF61DA79136006FA87D /* PE_Question.swift */; };
+		04F1AAF91DA79193006FA87D /* RealmController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F1AAF81DA79193006FA87D /* RealmController.swift */; };
 		04F878B41D9A2C1D00D621BE /* ReadingQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F878B31D9A2C1D00D621BE /* ReadingQuestionViewController.swift */; };
 		04F878B81D9A68CC00D621BE /* OnTapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F878B71D9A68CC00D621BE /* OnTapViewController.swift */; };
 		04F878BB1D9BC27C00D621BE /* MenuPDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F878BA1D9BC27C00D621BE /* MenuPDFViewController.swift */; };
@@ -100,6 +102,8 @@
 		04B61B061D9E0DE500C43770 /* MenuQuestionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuQuestionTableViewCell.xib; sourceTree = "<group>"; };
 		04B61B0A1D9E126500C43770 /* QuestionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionTableViewCell.swift; sourceTree = "<group>"; };
 		04B61B0B1D9E126500C43770 /* QuestionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionTableViewCell.xib; sourceTree = "<group>"; };
+		04F1AAF61DA79136006FA87D /* PE_Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PE_Question.swift; path = RealmObject/PE_Question.swift; sourceTree = "<group>"; };
+		04F1AAF81DA79193006FA87D /* RealmController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmController.swift; sourceTree = "<group>"; };
 		04F878B31D9A2C1D00D621BE /* ReadingQuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadingQuestionViewController.swift; sourceTree = "<group>"; };
 		04F878B71D9A68CC00D621BE /* OnTapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnTapViewController.swift; sourceTree = "<group>"; };
 		04F878BA1D9BC27C00D621BE /* MenuPDFViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuPDFViewController.swift; sourceTree = "<group>"; };
@@ -200,6 +204,7 @@
 				04951DCF1D917F0F00D4FDE0 /* Controller */,
 				045BFA411D8E46A700A8ADE6 /* AppDelegate.swift */,
 				04857CAA1D98FF2400DFDACE /* Global.swift */,
+				04126B271D9E509D00533175 /* SoundController.swift */,
 				045BFA431D8E46A700A8ADE6 /* ViewController.swift */,
 				045BFA451D8E46A700A8ADE6 /* Main.storyboard */,
 				045BFA481D8E46A700A8ADE6 /* Assets.xcassets */,
@@ -234,7 +239,6 @@
 		04951DCF1D917F0F00D4FDE0 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				04126B271D9E509D00533175 /* SoundController.swift */,
 				04B61B021D9E035800C43770 /* Login */,
 				04B61AFC1D9D81CC00C43770 /* Result */,
 				04857CA31D98D5FC00DFDACE /* ThongTin */,
@@ -264,6 +268,7 @@
 		04951DDA1D917FA200D4FDE0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				04F1AAF51DA78FDF006FA87D /* RealmObject */,
 				04951DDB1D917FB700D4FDE0 /* Question.swift */,
 				04951DDC1D917FB700D4FDE0 /* Reading.swift */,
 				0407A8471D9762040087D994 /* Grammar.swift */,
@@ -294,6 +299,15 @@
 				0444DFB41D97901F00A0D276 /* PlayTableViewCell.swift */,
 			);
 			name = Grammar;
+			sourceTree = "<group>";
+		};
+		04F1AAF51DA78FDF006FA87D /* RealmObject */ = {
+			isa = PBXGroup;
+			children = (
+				04F1AAF61DA79136006FA87D /* PE_Question.swift */,
+				04F1AAF81DA79193006FA87D /* RealmController.swift */,
+			);
+			name = RealmObject;
 			sourceTree = "<group>";
 		};
 		04F878B91D9BC26400D621BE /* PDF */ = {
@@ -492,6 +506,7 @@
 				04F878B41D9A2C1D00D621BE /* ReadingQuestionViewController.swift in Sources */,
 				0407A83F1D964BF30087D994 /* PlayViewController.swift in Sources */,
 				04F878C81D9BCC4B00D621BE /* PDFReadingViewController.swift in Sources */,
+				04F1AAF71DA79136006FA87D /* PE_Question.swift in Sources */,
 				04951DDD1D917FB700D4FDE0 /* Question.swift in Sources */,
 				04857CAD1D9908C400DFDACE /* BackgroundViewController.swift in Sources */,
 				04857CAB1D98FF2400DFDACE /* Global.swift in Sources */,
@@ -501,6 +516,7 @@
 				04B61AFF1D9E006C00C43770 /* SplashScreenViewController.swift in Sources */,
 				04B61AFA1D9D1C4A00C43770 /* AnswerTableViewCell.swift in Sources */,
 				04951DDE1D917FB700D4FDE0 /* Reading.swift in Sources */,
+				04F1AAF91DA79193006FA87D /* RealmController.swift in Sources */,
 				045BFA421D8E46A700A8ADE6 /* AppDelegate.swift in Sources */,
 				04857CB11D99A73000DFDACE /* ReadingViewController.swift in Sources */,
 			);
