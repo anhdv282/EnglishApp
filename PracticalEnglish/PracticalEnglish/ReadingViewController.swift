@@ -65,11 +65,6 @@ class ReadingViewController: UIViewController {
                             if let a = q["Answer3"] as? String {
                                 question.Answer3 = a
                             }
-                            //                            question.Answer0 = q["Answer0"] as! String
-                            //                            question.Answer1 = q["Answer1"] as! String
-                            //                            question.Answer2 = q["Answer2"] as! String
-                            //                            question.Answer3 = q["Answer3"] as! String
-                            //                            question.IsCorrect = Int(q["IsCorrect"] as! String)!
                             if let a = q["IsCorrect"] as? NSNumber {
                                 let aString = a.intValue
                                 question.IsCorrect = aString
