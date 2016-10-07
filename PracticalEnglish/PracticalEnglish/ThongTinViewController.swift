@@ -22,9 +22,9 @@ class ThongTinViewController: UIViewController {
     }
     
     @IBAction func clickTimGiaSu(_ sender: AnyObject) {
-        let urls = ["fb://group?id=149129658853592",
-                    "https://m.facebook.com/149129658853592"];
         
+        let urls = ["fb://page/gstienganhngoaithuong",
+                    "https://m.facebook.com/gstienganhngoaithuong"];
         let application = UIApplication.shared
         
         for urlString in urls {
@@ -38,8 +38,8 @@ class ThongTinViewController: UIViewController {
     }
     
     @IBAction func clickGroupFB(_ sender: AnyObject) {
-        let urls = ["fb://page/gstienganhngoaithuong",
-                    "https://m.facebook.com/gstienganhngoaithuong"];
+        let urls = ["fb://group?id=149129658853592",
+                    "https://m.facebook.com/149129658853592"];
         
         let application = UIApplication.shared
         

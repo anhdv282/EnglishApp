@@ -64,6 +64,11 @@ PODS:
     - GoogleSymbolUtilities (~> 1.0)
   - MBProgressHUD (1.0.0)
   - PDFReader (2.1.1)
+  - Realm (2.0.0):
+    - Realm/Headers (= 2.0.0)
+  - Realm/Headers (2.0.0)
+  - RealmSwift (2.0.0):
+    - Realm (= 2.0.0)
 
 DEPENDENCIES:
   - Firebase (>= 2.5.1)
@@ -72,6 +77,7 @@ DEPENDENCIES:
   - Firebase/Invites
   - MBProgressHUD (~> 1.0)
   - PDFReader (~> 2.1)
+  - RealmSwift
 
 SPEC CHECKSUMS:
   Firebase: 34187200ef4979dbd485c7aa685ef078bf587c86
@@ -92,7 +98,9 @@ SPEC CHECKSUMS:
   GoogleUtilities: 56c5ac05b7aa5dc417a1bb85221a9516e04d7032
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   PDFReader: 11a02b74e26c850de9ef98e6952a39aa0da8f655
+  Realm: 6dda421ae4b3e9a09742fc2cf4b876d459cbedcd
+  RealmSwift: 7d015f34a2781a50889be9b5a15c36c08597ea0e
 
-PODFILE CHECKSUM: a8850dec6862fa3687dd9b01ce5940f54e4af45d
+PODFILE CHECKSUM: 835dd7d638274bed50a919e76732dfb0d4cc0900
 
 COCOAPODS: 1.0.1
