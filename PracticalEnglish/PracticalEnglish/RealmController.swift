@@ -8,28 +8,17 @@
 
 import UIKit
 import RealmSwift
-class RealmController: UIViewController {
+class RealmController: NSObject {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+}
 
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+func saveData(question:PE_Question) {
+    // Get the default Realm
+    let realm = try! Realm()
+    // You only need to do this once (per thread)
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // Add to the Realm inside a transaction
+    try! realm.write {
+        realm.add(question)
     }
-    */
-
 }

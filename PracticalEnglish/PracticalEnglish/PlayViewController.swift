@@ -15,7 +15,8 @@ class PlayViewController: BackgroundViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var lblMark: UILabel!
     
-    @IBOutlet weak var fakeView: UIView!
+    @IBOutlet weak var lblText: UILabel!
+    var questionText = ""
 //    var grammar:Grammar = Grammar()
     var listQuestion:[Question] = [Question]()
     var index:Int = 0
@@ -32,6 +33,7 @@ class PlayViewController: BackgroundViewController {
         myTableView.estimatedRowHeight = 60
 //        listQuestion = grammar.listQuestion
         self.lblMark.text = "\(mark)/\(listQuestion.count)"
+        self.lblText.text = questionText
         // Do any additional setup after loading the view.
         collectionView.register(UINib(nibName: "PlayCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: "PlayCollectionViewCell")
         myTableView.register(UINib(nibName: "AnswerTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "AnswerTableViewCell")
@@ -84,7 +86,7 @@ class PlayViewController: BackgroundViewController {
     
     func delay(delay:Double, closure:()->()) {
         DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
-            self.fakeView.isHidden = true
+            self.myTableView.isUserInteractionEnabled = true
             self.index += 1
             if self.index >= self.listQuestion.count {
                 // create the alert
@@ -180,7 +182,7 @@ extension PlayViewController:UITableViewDelegate,UITableViewDataSource {
         }
         
         self.lblMark.text = "\(mark)/\(listQuestion.count)"
-        self.fakeView.isHidden = false
+        self.myTableView.isUserInteractionEnabled = false
         self.delay(delay: 2) {
         }
     }

@@ -62,7 +62,7 @@ class OnTapViewController: BackgroundViewController {
                     }
                 }
                 MBProgressHUD.hide(for: self.view, animated: true)
-                self.pushVC(listQuestion: self.listQuestionPhatAm)
+                self.pushVC(listQuestion: self.listQuestionPhatAm,lblText: "Pick out the word which has the underlined part pronounced different from the rest")
             } else {
                 MBProgressHUD.hide(for: self.view, animated: true)
             }
@@ -111,7 +111,7 @@ class OnTapViewController: BackgroundViewController {
                     }
                 }
                 MBProgressHUD.hide(for: self.view, animated: true)
-                self.pushVC(listQuestion: self.listQuestionTrongAm)
+                self.pushVC(listQuestion: self.listQuestionTrongAm,lblText: "Pick out the word that has the stress pattern different from that of the other words")
             } else {
                 MBProgressHUD.hide(for: self.view, animated: true)
             }
@@ -123,9 +123,10 @@ class OnTapViewController: BackgroundViewController {
         }
     }
     
-    func pushVC(listQuestion:[Question]) {
+    func pushVC(listQuestion:[Question],lblText:String) {
         let playVC = (self.storyboard!.instantiateViewController(withIdentifier: "PlayViewController") as! PlayViewController)
         playVC.listQuestion = listQuestion
+        playVC.questionText = lblText
         self.navigationController!.pushViewController(playVC, animated: true)
     }
     

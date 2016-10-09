@@ -14,7 +14,7 @@ class QuestionViewController: BackgroundViewController {
     
     @IBOutlet weak var navItem: UINavigationItem!
     
-    var listGrammar = [Grammar]()
+    var listMainQuestion = [MainQuestion]()
     override func viewDidLoad() {
         super.viewDidLoad()
         myTableView.rowHeight = UITableViewAutomaticDimension
@@ -45,9 +45,9 @@ class QuestionViewController: BackgroundViewController {
                 for snap in snapshots {
                     i += 1
                     if let postDict = snap.value as? Dictionary<String, AnyObject> {
-                        let grammar:Grammar = Grammar()
+                        let grammar:MainQuestion = MainQuestion()
                         var questions:[Question] = [Question]()
-                        grammar.content = postDict["Content"] as! String
+                        grammar.mainQuestion = postDict["Content"] as! String
                         let listQ = postDict["ListQuestion"] as? [[String : AnyObject]]
                         for q in listQ! {
                             let question:Question = Question()
@@ -79,7 +79,7 @@ class QuestionViewController: BackgroundViewController {
                         }
                         grammar.listQuestion = questions
                         grammar.id = i
-                        self.listGrammar.append(grammar)
+                        self.listMainQuestion.append(grammar)
                     }
                 }
                 self.myTableView.reloadData()
@@ -106,16 +106,18 @@ extension QuestionViewController:UITableViewDataSource,UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         SoundController.playClickButton()
         let playVC = (self.storyboard!.instantiateViewController(withIdentifier: "PlayViewController") as! PlayViewController)
-        playVC.listQuestion = listGrammar[indexPath.row].listQuestion
+        playVC.listQuestion = listMainQuestion[indexPath.row].listQuestion
+        playVC.questionText = "Choose a,b,c or d that best completes the sentence"
         self.navigationController!.pushViewController(playVC, animated: true)
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listGrammar.count
+        return listMainQuestion.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MenuQuestionTableViewCell") as! MenuQuestionTableViewCell
-        cell.content.text = listGrammar[indexPath.row].content
+        cell.content.text = listMainQuestion[indexPath.row].mainQuestion
         cell.headerTitle.backgroundColor = colorGray
         return cell
     }

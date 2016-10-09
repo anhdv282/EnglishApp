@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -16,7 +17,18 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Splash Screen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dpG-eQ-Dgv">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trắc nghiệm tiếng Anh THPT" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ose-8U-ime">
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                    <color key="textColor" red="0.41176470590000003" green="0.62352941179999999" blue="0.21960784310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appImage.png" translatesAutoresizingMaskIntoConstraints="NO" id="ww9-Ag-dWp"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="pie.edu.vn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kEJ-hY-0So">
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.41176470590000003" green="0.62352941179999999" blue="0.21960784310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tCI-E8-Ubz">
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -24,9 +36,20 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="dpG-eQ-Dgv" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="edt-2u-HA0"/>
-                <constraint firstItem="dpG-eQ-Dgv" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ehp-Mf-3l7"/>
+                <constraint firstItem="ww9-Ag-dWp" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="2cv-gB-Unz"/>
+                <constraint firstItem="kEJ-hY-0So" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="4p6-wy-blI"/>
+                <constraint firstItem="tCI-E8-Ubz" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Qmd-TK-dxG"/>
+                <constraint firstItem="ww9-Ag-dWp" firstAttribute="width" secondItem="ww9-Ag-dWp" secondAttribute="height" multiplier="1:1" id="WYQ-Wc-5eX"/>
+                <constraint firstItem="ose-8U-ime" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="csq-v7-bMb"/>
+                <constraint firstAttribute="bottom" secondItem="tCI-E8-Ubz" secondAttribute="bottom" constant="40" id="hX0-Vx-Sc6"/>
+                <constraint firstItem="ww9-Ag-dWp" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="100:667" id="i9Q-1Z-8Ah"/>
+                <constraint firstItem="ose-8U-ime" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="pP5-SO-mce"/>
+                <constraint firstItem="kEJ-hY-0So" firstAttribute="top" secondItem="ose-8U-ime" secondAttribute="bottom" constant="40" id="shg-t9-Nkp"/>
+                <constraint firstItem="ose-8U-ime" firstAttribute="top" secondItem="ww9-Ag-dWp" secondAttribute="bottom" constant="40" id="uct-fo-W5q"/>
             </constraints>
         </view>
     </objects>
+    <resources>
+        <image name="appImage.png" width="372" height="371"/>
+    </resources>
 </document>

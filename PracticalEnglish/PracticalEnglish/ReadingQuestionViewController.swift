@@ -16,7 +16,9 @@ class ReadingQuestionViewController: UIViewController {
 
     @IBOutlet weak var myTableView: UITableView!
     @IBOutlet weak var myContentView: UIView!
-    var reading:Reading = Reading()
+    
+    @IBOutlet weak var lblText: UILabel!
+    var reading:MainQuestion = MainQuestion()
     var listQuestion:[Question] = [Question]()
     var selectedIndexPaths = NSMutableSet()
     var myIndex:Int = 0
@@ -28,7 +30,7 @@ class ReadingQuestionViewController: UIViewController {
         myCollectionView.register(UINib(nibName: "PlayCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: "PlayCollectionViewCell")
         myTableView.register(UINib(nibName: "AnswerTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "AnswerTableViewCell")
         myTableView.register(UINib(nibName: "QuestionTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "QuestionTableViewCell")
-        myTextField.text = reading.question
+        myTextField.text = reading.mainQuestion
         myTableView.rowHeight = UITableViewAutomaticDimension
         myTableView.estimatedRowHeight = 60
         // Do any additional setup after loading the view.
@@ -386,13 +388,13 @@ extension ReadingQuestionViewController:UITableViewDelegate,UITableViewDataSourc
 
 extension ReadingQuestionViewController:UICollectionViewDelegate,UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return reading.answer.count
+        return reading.listQuestion.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PlayCollectionViewCell", for: indexPath) as! PlayCollectionViewCell
-        cell.lblNumber.text = "\(reading.answer[indexPath.row].iD)"
-        if reading.answer[indexPath.row].iD == myIndex {
+        cell.lblNumber.text = "\(reading.listQuestion[indexPath.row].iD)"
+        if reading.listQuestion[indexPath.row].iD == myIndex {
             cell.borderBgView.layer.borderColor = colorSelectCollection.cgColor
         } else {
             cell.borderBgView.layer.borderColor = UIColor.white.cgColor

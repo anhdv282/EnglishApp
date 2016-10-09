@@ -13,7 +13,7 @@ class ReadingViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    var listReading:[Reading] = [Reading]()
+    var listMainQuestion:[MainQuestion] = [MainQuestion]()
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -44,9 +44,9 @@ class ReadingViewController: UIViewController {
                 for snap in snapshots {
                     i += 1
                     if let postDict = snap.value as? Dictionary<String, AnyObject> {
-                        let reading:Reading = Reading()
+                        let reading:MainQuestion = MainQuestion()
                         var questions:[Question] = [Question]()
-                        reading.question = postDict["Content"] as! String
+                        reading.mainQuestion = postDict["Content"] as! String
                         let listQ = postDict["ListQuestion"] as? [[String : AnyObject]]
                         for q in listQ! {
                             let question:Question = Question()
@@ -76,9 +76,9 @@ class ReadingViewController: UIViewController {
                             //                            question.iD = q["Id"] as! String
                             questions.append(question)
                         }
-                        reading.answer = questions
+                        reading.listQuestion = questions
                         reading.id = i
-                        self.listReading.append(reading)
+                        self.listMainQuestion.append(reading)
                     }
                 }
                 self.tableView.reloadData()
@@ -93,8 +93,8 @@ class ReadingViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? ReadingQuestionViewController,
             let indexPath = self.tableView.indexPathForSelectedRow {
-            destination.reading = listReading[indexPath.row]
-            destination.listQuestion = listReading[indexPath.row].answer
+            destination.reading = listMainQuestion[indexPath.row]
+            destination.listQuestion = listMainQuestion[indexPath.row].listQuestion
         }
     }
 }
@@ -103,18 +103,18 @@ extension ReadingViewController:UITableViewDataSource,UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         SoundController.playClickButton()
         let readingVC = (self.storyboard!.instantiateViewController(withIdentifier: "ReadingQuestionViewController") as! ReadingQuestionViewController)
-        readingVC.listQuestion = listReading[indexPath.row].answer
-        readingVC.reading = listReading[indexPath.row]
+        readingVC.listQuestion = listMainQuestion[indexPath.row].listQuestion
+        readingVC.reading = listMainQuestion[indexPath.row]
         self.navigationController!.pushViewController(readingVC, animated: true)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listReading.count
+        return listMainQuestion.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MenuQuestionTableViewCell") as! MenuQuestionTableViewCell
-        cell.content.text = "Bài \(listReading[indexPath.row].id)"
+        cell.content.text = "Bài \(listMainQuestion[indexPath.row].id)"
         cell.headerTitle.backgroundColor = colorGray
         return cell
     }

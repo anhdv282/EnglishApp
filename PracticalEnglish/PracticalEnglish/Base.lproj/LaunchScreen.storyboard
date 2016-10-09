@@ -20,30 +20,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="SKu-AM-Ycc"/>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trắc nghiệm tiếng Anh THPT" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yc7-aX-LaY">
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <color key="textColor" red="0.41176470590000003" green="0.62352941179999999" blue="0.21960784310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appImage.png" translatesAutoresizingMaskIntoConstraints="NO" id="FST-Of-CEa">
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="FST-Of-CEa" secondAttribute="height" multiplier="1:1" id="ilv-5f-nwP"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="pie.edu.vn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DHD-7n-dSp">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.41176470590000003" green="0.62352941179999999" blue="0.21960784310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trắc nghiệm tiếng Anh THPT" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yc7-aX-LaY">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" red="0.41176470590000003" green="0.62352941179999999" blue="0.21960784310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="FST-Of-CEa" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="5ZN-mE-P0X"/>
+                            <constraint firstItem="DHD-7n-dSp" firstAttribute="top" secondItem="yc7-aX-LaY" secondAttribute="bottom" constant="40" id="0Tm-NM-EMh"/>
                             <constraint firstItem="yc7-aX-LaY" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="8" id="6o7-Xh-lQt"/>
                             <constraint firstAttribute="trailing" secondItem="yc7-aX-LaY" secondAttribute="trailing" constant="8" id="BrA-P4-0DF"/>
-                            <constraint firstItem="SKu-AM-Ycc" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="-20" id="ENv-8o-VTq"/>
+                            <constraint firstItem="DHD-7n-dSp" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="a3d-Xc-4Uz"/>
                             <constraint firstItem="FST-Of-CEa" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="100:667" id="cCg-Qm-XeV"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="SKu-AM-Ycc" secondAttribute="bottom" id="fal-VL-rRp"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="SKu-AM-Ycc" secondAttribute="bottom" id="hh4-WZ-rXA"/>
                             <constraint firstItem="yc7-aX-LaY" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="hlZ-H6-fUV"/>
                             <constraint firstAttribute="trailing" secondItem="SKu-AM-Ycc" secondAttribute="trailing" id="iOB-YE-9Ie"/>
                             <constraint firstItem="FST-Of-CEa" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="qZR-YX-03Y"/>
                             <constraint firstItem="yc7-aX-LaY" firstAttribute="top" secondItem="FST-Of-CEa" secondAttribute="bottom" constant="40" id="tRz-l1-wb9"/>
                             <constraint firstItem="SKu-AM-Ycc" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="vOi-h6-unf"/>
+                            <constraint firstItem="yc7-aX-LaY" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="xJ5-xx-Sq6"/>
+                            <constraint firstItem="SKu-AM-Ycc" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="-20" id="yYY-Rl-8tq"/>
                         </constraints>
                     </view>
                 </viewController>
