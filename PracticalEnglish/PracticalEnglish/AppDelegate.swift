@@ -26,6 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        let navigationController = UINavigationController(rootViewController: vc)
 //        self.window?.rootViewController = navigationController
         self.window?.makeKeyAndVisible()
+        FIRDatabase.database().persistenceEnabled = true
         return true
     }
 
