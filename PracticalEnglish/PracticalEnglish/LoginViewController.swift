@@ -20,7 +20,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var phoneSignUp: UITextField!
     
     @IBOutlet weak var mainView: UIView!
-    let usersRef = FIRDatabase.database().reference(withPath: "User")
+    @IBOutlet weak var btnSignUp: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         FIRAuth.auth()!.addStateDidChangeListener() { auth, user in
@@ -65,6 +66,7 @@ class LoginViewController: UIViewController {
     }
     
     func saveUserToData() {
+        let usersRef = FIRDatabase.database().reference(withPath: "User")
         let user :User = User(_name: nameSignUp.text!, _mobileNumber: phoneSignUp.text!, _email: emailSignUp.text!)
         usersRef.setValue(user.toAnyObject())
     }
@@ -78,7 +80,26 @@ extension LoginViewController: UITextFieldDelegate {
         }
         if textField == txtPassword {
             textField.resignFirstResponder()
+            self.view.endEditing(true)
         }
+        if textField == emailSignUp {
+            passwordSignUp.becomeFirstResponder()
+        }
+        if textField == passwordSignUp {
+            retypePasswordSignUp.becomeFirstResponder()
+        }
+        if textField == retypePasswordSignUp {
+            nameSignUp.becomeFirstResponder()
+        }
+        if textField == nameSignUp {
+            phoneSignUp.becomeFirstResponder()
+        }
+        if textField == phoneSignUp {
+            textField.resignFirstResponder()
+            self.view.endEditing(true)
+            self.clickSignUp(btnSignUp)
+        }
+        
         return true
     }
     

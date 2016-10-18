@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="8Eg-VJ-Acd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="TTM-Yk-ghI">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -925,7 +925,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TTM-Yk-ghI" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" backIndicatorTransitionMaskImage="back_button_w" id="TOQ-NX-SQL">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" backIndicatorTransitionMaskImage="back_button_w" id="TOQ-NX-SQL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.41176470590000003" green="0.62352941179999999" blue="0.21960784310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1121,6 +1121,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnSignUp" destination="fdi-ED-Ost" id="nHR-Tx-3Hb"/>
                         <outlet property="emailSignUp" destination="roM-T2-eft" id="N2P-ui-KP2"/>
                         <outlet property="mainView" destination="1ll-yo-60Z" id="jw3-4B-OZW"/>
                         <outlet property="nameSignUp" destination="6wt-XG-qKZ" id="Qcx-5P-sQ5"/>
