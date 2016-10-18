@@ -12,6 +12,15 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var txtUsername: UITextField!
     
     @IBOutlet weak var txtPassword: UITextField!
+    
+    @IBOutlet weak var emailSignUp: UITextField!
+    @IBOutlet weak var passwordSignUp: UITextField!
+    @IBOutlet weak var retypePasswordSignUp: UITextField!
+    @IBOutlet weak var nameSignUp: UITextField!
+    @IBOutlet weak var phoneSignUp: UITextField!
+    
+    @IBOutlet weak var mainView: UIView!
+    let usersRef = FIRDatabase.database().reference(withPath: "User")
     override func viewDidLoad() {
         super.viewDidLoad()
         FIRAuth.auth()!.addStateDidChangeListener() { auth, user in
@@ -19,6 +28,7 @@ class LoginViewController: UIViewController {
                 //                self.performSegue(withIdentifier: self.loginToList, sender: nil)
                 print("yeah")
             }
+            print("auth : \(auth)")
         }
         // Do any additional setup after loading the view.
     }
@@ -34,44 +44,30 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func clickSignUpBtn(_ sender: AnyObject) {
-        let alert = UIAlertController(title: "Register",
-                                      message: "Register",
-                                      preferredStyle: .alert)
-        
-        let saveAction = UIAlertAction(title: "Save",
-                                       style: .default) { action in
-                                        let emailField = alert.textFields![0]
-                                        let passwordField = alert.textFields![1]
-                                        
-                                        FIRAuth.auth()!.createUser(withEmail: emailField.text!,
-                                                                   password: passwordField.text!) { user, error in
-                                                                    if error == nil {
-                                                                        FIRAuth.auth()!.signIn(withEmail: self.txtUsername.text!,
-                                                                                               password: self.txtPassword.text!)
-                                                                    } else {
-                                                                        print(error?.localizedDescription)
-                                                                    }
-                                        }
-        }
-        
-        let cancelAction = UIAlertAction(title: "Cancel",
-                                         style: .default)
-        
-        alert.addTextField { textEmail in
-            textEmail.placeholder = "Enter your email"
-        }
-        
-        alert.addTextField { textPassword in
-            textPassword.isSecureTextEntry = true
-            textPassword.placeholder = "Enter your password"
-        }
-        
-        alert.addAction(saveAction)
-        alert.addAction(cancelAction)
-        
-        present(alert, animated: true, completion: nil)
+        self.mainView.isHidden = false
     }
     
+    @IBAction func clickSignUp(_ sender: UIButton) {
+        saveUserToData()
+        FIRAuth.auth()!.createUser(withEmail: emailSignUp.text!,
+                                   password: passwordSignUp.text!) { user, error in
+                                    if error == nil {
+                                        FIRAuth.auth()!.signIn(withEmail: self.emailSignUp.text!,
+                                                               password: self.passwordSignUp.text!)
+                                    } else {
+                                        print(error?.localizedDescription)
+                                    }
+        }
+    }
+    
+    @IBAction func clickCancel(_ sender: AnyObject) {
+        self.mainView.isHidden = true
+    }
+    
+    func saveUserToData() {
+        let user :User = User(_name: nameSignUp.text!, _mobileNumber: phoneSignUp.text!, _email: emailSignUp.text!)
+        usersRef.setValue(user.toAnyObject())
+    }
 }
 
 extension LoginViewController: UITextFieldDelegate {

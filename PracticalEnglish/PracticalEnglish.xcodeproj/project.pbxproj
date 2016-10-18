@@ -26,6 +26,7 @@
 		045BFA5E1D8F001F00A8ADE6 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 045BFA5B1D8F001F00A8ADE6 /* FBSDKCoreKit.framework */; };
 		045BFA5F1D8F001F00A8ADE6 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 045BFA5C1D8F001F00A8ADE6 /* FBSDKLoginKit.framework */; };
 		045BFA601D8F001F00A8ADE6 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 045BFA5D1D8F001F00A8ADE6 /* FBSDKShareKit.framework */; };
+		047C5DAC1DB4CA9300D435B7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047C5DAB1DB4CA9300D435B7 /* User.swift */; };
 		04857CA51D98D61F00DFDACE /* ThongTinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04857CA41D98D61E00DFDACE /* ThongTinViewController.swift */; };
 		04857CA71D98FD7A00DFDACE /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 04857CA61D98FD7A00DFDACE /* background.jpg */; };
 		04857CA91D98FD8900DFDACE /* iconEnglish.png in Resources */ = {isa = PBXBuildFile; fileRef = 04857CA81D98FD8900DFDACE /* iconEnglish.png */; };
@@ -82,6 +83,7 @@
 		045BFA5B1D8F001F00A8ADE6 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		045BFA5C1D8F001F00A8ADE6 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		045BFA5D1D8F001F00A8ADE6 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = ../../../../Documents/FacebookSDK/FBSDKShareKit.framework; sourceTree = "<group>"; };
+		047C5DAB1DB4CA9300D435B7 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		04857CA41D98D61E00DFDACE /* ThongTinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThongTinViewController.swift; sourceTree = "<group>"; };
 		04857CA61D98FD7A00DFDACE /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		04857CA81D98FD8900DFDACE /* iconEnglish.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconEnglish.png; sourceTree = "<group>"; };
@@ -271,6 +273,7 @@
 				04F1AAF51DA78FDF006FA87D /* RealmObject */,
 				04951DDB1D917FB700D4FDE0 /* Question.swift */,
 				04C357A01DA94A250009F28C /* MainQuestion.swift */,
+				047C5DAB1DB4CA9300D435B7 /* User.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -512,6 +515,7 @@
 				04857CAB1D98FF2400DFDACE /* Global.swift in Sources */,
 				045BFA441D8E46A700A8ADE6 /* ViewController.swift in Sources */,
 				0407A8361D963F630087D994 /* QuestionViewController.swift in Sources */,
+				047C5DAC1DB4CA9300D435B7 /* User.swift in Sources */,
 				04F878B81D9A68CC00D621BE /* OnTapViewController.swift in Sources */,
 				04B61AFF1D9E006C00C43770 /* SplashScreenViewController.swift in Sources */,
 				04B61AFA1D9D1C4A00C43770 /* AnswerTableViewCell.swift in Sources */,
