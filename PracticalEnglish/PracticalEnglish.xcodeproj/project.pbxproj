@@ -26,6 +26,7 @@
 		045BFA5E1D8F001F00A8ADE6 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 045BFA5B1D8F001F00A8ADE6 /* FBSDKCoreKit.framework */; };
 		045BFA5F1D8F001F00A8ADE6 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 045BFA5C1D8F001F00A8ADE6 /* FBSDKLoginKit.framework */; };
 		045BFA601D8F001F00A8ADE6 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 045BFA5D1D8F001F00A8ADE6 /* FBSDKShareKit.framework */; };
+		046927691DB8CD9D00327B72 /* PE_LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046927681DB8CD9D00327B72 /* PE_LoginViewController.swift */; };
 		047C5DAC1DB4CA9300D435B7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047C5DAB1DB4CA9300D435B7 /* User.swift */; };
 		04857CA51D98D61F00DFDACE /* ThongTinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04857CA41D98D61E00DFDACE /* ThongTinViewController.swift */; };
 		04857CA71D98FD7A00DFDACE /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 04857CA61D98FD7A00DFDACE /* background.jpg */; };
@@ -83,6 +84,7 @@
 		045BFA5B1D8F001F00A8ADE6 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		045BFA5C1D8F001F00A8ADE6 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		045BFA5D1D8F001F00A8ADE6 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = ../../../../Documents/FacebookSDK/FBSDKShareKit.framework; sourceTree = "<group>"; };
+		046927681DB8CD9D00327B72 /* PE_LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PE_LoginViewController.swift; sourceTree = "<group>"; };
 		047C5DAB1DB4CA9300D435B7 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		04857CA41D98D61E00DFDACE /* ThongTinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThongTinViewController.swift; sourceTree = "<group>"; };
 		04857CA61D98FD7A00DFDACE /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
@@ -289,6 +291,7 @@
 			isa = PBXGroup;
 			children = (
 				04B61B031D9E073400C43770 /* LoginViewController.swift */,
+				046927681DB8CD9D00327B72 /* PE_LoginViewController.swift */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -495,6 +498,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				046927691DB8CD9D00327B72 /* PE_LoginViewController.swift in Sources */,
 				04F878BB1D9BC27C00D621BE /* MenuPDFViewController.swift in Sources */,
 				04857CA51D98D61F00DFDACE /* ThongTinViewController.swift in Sources */,
 				04B61B041D9E073400C43770 /* LoginViewController.swift in Sources */,
