@@ -26,6 +26,10 @@
 		045BFA5E1D8F001F00A8ADE6 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 045BFA5B1D8F001F00A8ADE6 /* FBSDKCoreKit.framework */; };
 		045BFA5F1D8F001F00A8ADE6 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 045BFA5C1D8F001F00A8ADE6 /* FBSDKLoginKit.framework */; };
 		045BFA601D8F001F00A8ADE6 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 045BFA5D1D8F001F00A8ADE6 /* FBSDKShareKit.framework */; };
+		046363C41DB9F1DA00C7D212 /* PE_TextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046363C21DB9F1DA00C7D212 /* PE_TextFieldTableViewCell.swift */; };
+		046363C51DB9F1DA00C7D212 /* PE_TextFieldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 046363C31DB9F1DA00C7D212 /* PE_TextFieldTableViewCell.xib */; };
+		046363C91DBA0DDB00C7D212 /* PE_SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046363C81DBA0DDB00C7D212 /* PE_SignUpViewController.swift */; };
+		046363CB1DBA0E7500C7D212 /* PE_ProfileDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046363CA1DBA0E7500C7D212 /* PE_ProfileDisplayViewController.swift */; };
 		046927691DB8CD9D00327B72 /* PE_LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046927681DB8CD9D00327B72 /* PE_LoginViewController.swift */; };
 		047C5DAC1DB4CA9300D435B7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047C5DAB1DB4CA9300D435B7 /* User.swift */; };
 		04857CA51D98D61F00DFDACE /* ThongTinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04857CA41D98D61E00DFDACE /* ThongTinViewController.swift */; };
@@ -84,6 +88,10 @@
 		045BFA5B1D8F001F00A8ADE6 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		045BFA5C1D8F001F00A8ADE6 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		045BFA5D1D8F001F00A8ADE6 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = ../../../../Documents/FacebookSDK/FBSDKShareKit.framework; sourceTree = "<group>"; };
+		046363C21DB9F1DA00C7D212 /* PE_TextFieldTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PE_TextFieldTableViewCell.swift; sourceTree = "<group>"; };
+		046363C31DB9F1DA00C7D212 /* PE_TextFieldTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PE_TextFieldTableViewCell.xib; sourceTree = "<group>"; };
+		046363C81DBA0DDB00C7D212 /* PE_SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PE_SignUpViewController.swift; sourceTree = "<group>"; };
+		046363CA1DBA0E7500C7D212 /* PE_ProfileDisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PE_ProfileDisplayViewController.swift; sourceTree = "<group>"; };
 		046927681DB8CD9D00327B72 /* PE_LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PE_LoginViewController.swift; sourceTree = "<group>"; };
 		047C5DAB1DB4CA9300D435B7 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		04857CA41D98D61E00DFDACE /* ThongTinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThongTinViewController.swift; sourceTree = "<group>"; };
@@ -292,6 +300,10 @@
 			children = (
 				04B61B031D9E073400C43770 /* LoginViewController.swift */,
 				046927681DB8CD9D00327B72 /* PE_LoginViewController.swift */,
+				046363C21DB9F1DA00C7D212 /* PE_TextFieldTableViewCell.swift */,
+				046363C31DB9F1DA00C7D212 /* PE_TextFieldTableViewCell.xib */,
+				046363C81DBA0DDB00C7D212 /* PE_SignUpViewController.swift */,
+				046363CA1DBA0E7500C7D212 /* PE_ProfileDisplayViewController.swift */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -432,6 +444,7 @@
 				045BFA491D8E46A700A8ADE6 /* Assets.xcassets in Resources */,
 				04857CAF1D999B6A00DFDACE /* appImage.png in Resources */,
 				04857CA91D98FD8900DFDACE /* iconEnglish.png in Resources */,
+				046363C51DB9F1DA00C7D212 /* PE_TextFieldTableViewCell.xib in Resources */,
 				0407A8441D96A5F30087D994 /* PlayCollectionViewCell.xib in Resources */,
 				04857CA71D98FD7A00DFDACE /* background.jpg in Resources */,
 				04126B251D9E502A00533175 /* SFX_UI_complete.wav in Resources */,
@@ -500,13 +513,16 @@
 			files = (
 				046927691DB8CD9D00327B72 /* PE_LoginViewController.swift in Sources */,
 				04F878BB1D9BC27C00D621BE /* MenuPDFViewController.swift in Sources */,
+				046363C41DB9F1DA00C7D212 /* PE_TextFieldTableViewCell.swift in Sources */,
 				04857CA51D98D61F00DFDACE /* ThongTinViewController.swift in Sources */,
+				046363C91DBA0DDB00C7D212 /* PE_SignUpViewController.swift in Sources */,
 				04B61B041D9E073400C43770 /* LoginViewController.swift in Sources */,
 				04F878BE1D9BC2C100D621BE /* CommonTableViewCell.swift in Sources */,
 				0407A8431D96A5F30087D994 /* PlayCollectionViewCell.swift in Sources */,
 				04126B281D9E509D00533175 /* SoundController.swift in Sources */,
 				04B61B071D9E0DE500C43770 /* MenuQuestionTableViewCell.swift in Sources */,
 				0407A8461D96F3040087D994 /* DataManager.swift in Sources */,
+				046363CB1DBA0E7500C7D212 /* PE_ProfileDisplayViewController.swift in Sources */,
 				0444DFB51D97901F00A0D276 /* PlayTableViewCell.swift in Sources */,
 				04B61B0C1D9E126500C43770 /* QuestionTableViewCell.swift in Sources */,
 				04F878B41D9A2C1D00D621BE /* ReadingQuestionViewController.swift in Sources */,

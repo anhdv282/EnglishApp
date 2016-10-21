@@ -37,3 +37,13 @@ extension UIColor {
         self.init(red:(netHex >> 16) & 0xff, green:(netHex >> 8) & 0xff, blue:netHex & 0xff)
     }
 }
+
+enum PE_ProfileViewType : Int {
+    case updateProfile = 0, changePass, signUp
+}
+
+func showAlertView(_ viewController : UIViewController, title : String, message : String) {
+    let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+    alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+    viewController.present(alert, animated: true, completion: nil)
+}
