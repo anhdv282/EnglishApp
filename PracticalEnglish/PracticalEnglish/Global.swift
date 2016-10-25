@@ -15,6 +15,18 @@ let colorRight = UIColor(netHex: 0x699F38)
 let colorSelectCollection = UIColor(netHex: 0x2B2B2B)
 let colorGray = UIColor(netHex: 0xC7C7CC)
 
+extension UIView {
+    @IBInspectable var cornerRadius: CGFloat {
+        get {
+            return layer.cornerRadius
+        }
+        set {
+            layer.cornerRadius = newValue
+            layer.masksToBounds = newValue > 0
+        }
+    }
+}
+
 enum QuestionType: Int {
     case notSelected = 0
     case rightQuestion

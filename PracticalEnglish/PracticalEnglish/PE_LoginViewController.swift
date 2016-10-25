@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 let tagTextField = 100
+let loginToMenu = "loginToMenu"
 class PE_LoginViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
 
@@ -24,9 +25,8 @@ class PE_LoginViewController: UIViewController {
         FIRAuth.auth()!.addStateDidChangeListener() { auth, user in
             if user != nil {
                 //                self.performSegue(withIdentifier: self.loginToList, sender: nil)
-                print("yeah")
+                self.performSegue(withIdentifier: loginToMenu, sender: nil)
             }
-            print("auth : \(auth)")
         }
     }
 
@@ -61,6 +61,7 @@ class PE_LoginViewController: UIViewController {
     }
     
     @IBAction func clickSignIn(_ sender: UIButton) {
+        self.view.endEditing(true)
         if textPassword != "" || textEmail != "" {
             FIRAuth.auth()!.signIn(withEmail: textEmail,
                                    password: textPassword)

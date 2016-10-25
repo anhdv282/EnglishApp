@@ -996,7 +996,7 @@
                                             <outlet property="delegate" destination="nbr-3B-Jrz" id="ITE-9d-ge9"/>
                                         </connections>
                                     </tableView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F4B-ve-ZE2">
+                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F4B-ve-ZE2">
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fb_icon" translatesAutoresizingMaskIntoConstraints="NO" id="nPA-gC-2xf">
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1051,6 +1051,11 @@
                                         <state key="normal" title="SIGN IN">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="clickSignIn:" destination="nbr-3B-Jrz" eventType="touchUpInside" id="wPc-sf-laN"/>
                                         </connections>
@@ -1094,11 +1099,11 @@
                         <constraints>
                             <constraint firstItem="9YR-HG-cIg" firstAttribute="centerX" secondItem="JE7-XQ-0SN" secondAttribute="centerX" id="0ks-VC-mgN"/>
                             <constraint firstItem="RMc-56-uRe" firstAttribute="top" secondItem="o9S-5q-pGt" secondAttribute="bottom" constant="40" id="106-Ea-ngR"/>
-                            <constraint firstAttribute="trailing" secondItem="RYH-v2-L7B" secondAttribute="trailing" id="Cml-3H-SgZ"/>
+                            <constraint firstAttribute="trailing" secondItem="RYH-v2-L7B" secondAttribute="trailing" constant="8" id="Cml-3H-SgZ"/>
                             <constraint firstAttribute="trailing" secondItem="01t-Xs-dkc" secondAttribute="trailing" id="Ern-9s-6sy"/>
                             <constraint firstItem="01t-Xs-dkc" firstAttribute="leading" secondItem="JE7-XQ-0SN" secondAttribute="leading" id="FyM-Y1-mI6"/>
                             <constraint firstItem="o9S-5q-pGt" firstAttribute="centerX" secondItem="JE7-XQ-0SN" secondAttribute="centerX" id="SmT-U3-owS"/>
-                            <constraint firstItem="RYH-v2-L7B" firstAttribute="leading" secondItem="JE7-XQ-0SN" secondAttribute="leading" id="TaU-Pp-r1Q"/>
+                            <constraint firstItem="RYH-v2-L7B" firstAttribute="leading" secondItem="JE7-XQ-0SN" secondAttribute="leading" constant="8" id="TaU-Pp-r1Q"/>
                             <constraint firstItem="RMc-56-uRe" firstAttribute="leading" secondItem="JE7-XQ-0SN" secondAttribute="leading" constant="8" id="Wyo-EK-Fep"/>
                             <constraint firstItem="9YR-HG-cIg" firstAttribute="top" secondItem="RMc-56-uRe" secondAttribute="bottom" constant="40" id="XdZ-MF-YKj"/>
                             <constraint firstAttribute="trailing" secondItem="RMc-56-uRe" secondAttribute="trailing" constant="8" id="Y6a-iT-o2l"/>
@@ -1113,11 +1118,12 @@
                     <connections>
                         <outlet property="consBotLoginView" destination="thP-v5-Ohf" id="jUz-De-Fx4"/>
                         <outlet property="tableView" destination="qoQ-Ee-Atz" id="5Ru-Sk-mQm"/>
+                        <segue destination="TTM-Yk-ghI" kind="presentation" identifier="loginToMenu" id="ghS-Zi-ebO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3qi-is-QV8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-848.79999999999995" y="-144.3778110944528"/>
+            <point key="canvasLocation" x="-420" y="-145"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="Gbc-20-IQI">
