@@ -18,7 +18,7 @@ class ReadingQuestionViewController: UIViewController {
     @IBOutlet weak var myContentView: UIView!
     
     @IBOutlet weak var lblText: UILabel!
-    var reading:MainQuestion = MainQuestion()
+//    var reading:Lesson = Lesson()
     var listQuestion:[Question] = [Question]()
     var selectedIndexPaths = NSMutableSet()
     var myIndex:Int = 0
@@ -30,7 +30,7 @@ class ReadingQuestionViewController: UIViewController {
         myCollectionView.register(UINib(nibName: "PlayCollectionViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: "PlayCollectionViewCell")
         myTableView.register(UINib(nibName: "AnswerTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "AnswerTableViewCell")
         myTableView.register(UINib(nibName: "QuestionTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "QuestionTableViewCell")
-        myTextField.text = reading.mainQuestion
+//        myTextField.text = reading.content
         myTableView.rowHeight = UITableViewAutomaticDimension
         myTableView.estimatedRowHeight = 60
         // Do any additional setup after loading the view.
@@ -388,26 +388,27 @@ extension ReadingQuestionViewController:UITableViewDelegate,UITableViewDataSourc
 
 extension ReadingQuestionViewController:UICollectionViewDelegate,UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return reading.listQuestion.count
+//        return reading.listQuestion.count
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PlayCollectionViewCell", for: indexPath) as! PlayCollectionViewCell
-        cell.lblNumber.text = "\(reading.listQuestion[indexPath.row].iD)"
-        if reading.listQuestion[indexPath.row].iD == myIndex {
-            cell.borderBgView.layer.borderColor = colorSelectCollection.cgColor
-        } else {
-            cell.borderBgView.layer.borderColor = UIColor.white.cgColor
-        }
-        if listQuestion[indexPath.row].state == .NotSelected {
-            cell.borderBgView.backgroundColor = colorGray
-        } else if listQuestion[indexPath.row].state == .RightSelected {
-            cell.borderBgView.backgroundColor = colorRight
-        } else if listQuestion[indexPath.row].state == .WrongSelected {
-            cell.borderBgView.backgroundColor = colorWrong
-        } else {
-            cell.borderBgView.backgroundColor = colorGray
-        }
+//        cell.lblNumber.text = "\(reading.listQuestion[indexPath.row].iD)"
+//        if reading.listQuestion[indexPath.row].iD == myIndex {
+//            cell.borderBgView.layer.borderColor = colorSelectCollection.cgColor
+//        } else {
+//            cell.borderBgView.layer.borderColor = UIColor.white.cgColor
+//        }
+//        if listQuestion[indexPath.row].state == .NotSelected {
+//            cell.borderBgView.backgroundColor = colorGray
+//        } else if listQuestion[indexPath.row].state == .RightSelected {
+//            cell.borderBgView.backgroundColor = colorRight
+//        } else if listQuestion[indexPath.row].state == .WrongSelected {
+//            cell.borderBgView.backgroundColor = colorWrong
+//        } else {
+//            cell.borderBgView.backgroundColor = colorGray
+//        }
         return cell
     }
 }

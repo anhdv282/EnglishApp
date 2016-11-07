@@ -13,7 +13,7 @@ class ReadingViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    var listMainQuestion:[MainQuestion] = [MainQuestion]()
+    var listMainQuestion:[Lesson] = [Lesson]()
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -44,9 +44,9 @@ class ReadingViewController: UIViewController {
                 for snap in snapshots {
                     i += 1
                     if let postDict = snap.value as? Dictionary<String, AnyObject> {
-                        let reading:MainQuestion = MainQuestion()
+                        let reading:Lesson = Lesson()
                         var questions:[Question] = [Question]()
-                        reading.mainQuestion = postDict["Content"] as! String
+                        reading.content = postDict["Content"] as! String
                         let listQ = postDict["ListQuestion"] as? [[String : AnyObject]]
                         for q in listQ! {
                             let question:Question = Question()
@@ -93,7 +93,7 @@ class ReadingViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? ReadingQuestionViewController,
             let indexPath = self.tableView.indexPathForSelectedRow {
-            destination.reading = listMainQuestion[indexPath.row]
+//            destination.reading = listMainQuestion[indexPath.row]
             destination.listQuestion = listMainQuestion[indexPath.row].listQuestion
         }
     }
@@ -104,7 +104,7 @@ extension ReadingViewController:UITableViewDataSource,UITableViewDelegate {
         SoundController.playClickButton()
         let readingVC = (self.storyboard!.instantiateViewController(withIdentifier: "ReadingQuestionViewController") as! ReadingQuestionViewController)
         readingVC.listQuestion = listMainQuestion[indexPath.row].listQuestion
-        readingVC.reading = listMainQuestion[indexPath.row]
+//        readingVC.reading = listMainQuestion[indexPath.row]
         self.navigationController!.pushViewController(readingVC, animated: true)
     }
     

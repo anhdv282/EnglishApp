@@ -14,7 +14,7 @@ class QuestionViewController: BackgroundViewController {
     
     @IBOutlet weak var navItem: UINavigationItem!
     
-    var listMainQuestion = [MainQuestion]()
+    var listMainQuestion = [Lesson]()
     override func viewDidLoad() {
         super.viewDidLoad()
         myTableView.rowHeight = UITableViewAutomaticDimension
@@ -45,9 +45,9 @@ class QuestionViewController: BackgroundViewController {
                 for snap in snapshots {
                     i += 1
                     if let postDict = snap.value as? Dictionary<String, AnyObject> {
-                        let grammar:MainQuestion = MainQuestion()
+                        let grammar:Lesson = Lesson()
                         var questions:[Question] = [Question]()
-                        grammar.mainQuestion = postDict["Content"] as! String
+                        grammar.content = postDict["Content"] as! String
                         let listQ = postDict["ListQuestion"] as? [[String : AnyObject]]
                         for q in listQ! {
                             let question:Question = Question()
@@ -117,7 +117,7 @@ extension QuestionViewController:UITableViewDataSource,UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MenuQuestionTableViewCell") as! MenuQuestionTableViewCell
-        cell.content.text = listMainQuestion[indexPath.row].mainQuestion
+        cell.content.text = listMainQuestion[indexPath.row].content
         cell.headerTitle.backgroundColor = colorGray
         return cell
     }

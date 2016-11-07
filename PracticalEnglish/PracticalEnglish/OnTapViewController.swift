@@ -12,9 +12,12 @@ import Firebase
 class OnTapViewController: BackgroundViewController {
     var listQuestionPhatAm:[Question] = [Question]()
     var listQuestionTrongAm:[Question] = [Question]()
+    var listOnTap:[String:String] = [String:String]()
+    
+    @IBOutlet weak var onTapTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-//         getDataPhatAm()
         // Do any additional setup after loading the view.
     }
     
@@ -147,5 +150,15 @@ class OnTapViewController: BackgroundViewController {
     
     @IBAction func clickTrongAmBtn(_ sender: AnyObject) {
         self.getDataTrongAm()
+    }
+}
+
+extension OnTapViewController:UITabBarDelegate,UITableViewDataSource {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return listOnTap.count
     }
 }
