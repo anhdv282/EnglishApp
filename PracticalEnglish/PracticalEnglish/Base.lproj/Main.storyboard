@@ -460,7 +460,7 @@
         <!--Ôn Tập-->
         <scene sceneID="uBx-Uj-4Qp">
             <objects>
-                <viewController id="L5W-pS-jbo" customClass="OnTapViewController" customModule="PracticalEnglish" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="L5W-pS-jbo" customClass="PE_OnTapViewController" customModule="PracticalEnglish" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KqB-El-R2H"/>
                         <viewControllerLayoutGuide type="bottom" id="ha8-s2-3yl"/>

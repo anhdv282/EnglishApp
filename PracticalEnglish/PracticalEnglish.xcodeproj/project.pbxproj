@@ -42,6 +42,8 @@
 		046E72241DD0463200024AC8 /* SFX_UI_capture.wav in Resources */ = {isa = PBXBuildFile; fileRef = 046E721C1DD0463200024AC8 /* SFX_UI_capture.wav */; };
 		046E72251DD0463200024AC8 /* SFX_UI_complete.wav in Resources */ = {isa = PBXBuildFile; fileRef = 046E721D1DD0463200024AC8 /* SFX_UI_complete.wav */; };
 		046E72261DD0463200024AC8 /* SFX_UI_welcome.wav in Resources */ = {isa = PBXBuildFile; fileRef = 046E721E1DD0463200024AC8 /* SFX_UI_welcome.wav */; };
+		047AE0D21DD1DC8F008C0B8E /* PE_OnTapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047AE0D01DD1DC8F008C0B8E /* PE_OnTapTableViewCell.swift */; };
+		047AE0D31DD1DC8F008C0B8E /* PE_OnTapTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 047AE0D11DD1DC8F008C0B8E /* PE_OnTapTableViewCell.xib */; };
 		047C5DAC1DB4CA9300D435B7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047C5DAB1DB4CA9300D435B7 /* User.swift */; };
 		04857CA51D98D61F00DFDACE /* PE_ThongTinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04857CA41D98D61E00DFDACE /* PE_ThongTinViewController.swift */; };
 		04857CA91D98FD8900DFDACE /* iconEnglish.png in Resources */ = {isa = PBXBuildFile; fileRef = 04857CA81D98FD8900DFDACE /* iconEnglish.png */; };
@@ -59,7 +61,7 @@
 		04B61B0D1D9E126500C43770 /* QuestionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04B61B0B1D9E126500C43770 /* QuestionTableViewCell.xib */; };
 		04F1AAF71DA79136006FA87D /* PE_Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F1AAF61DA79136006FA87D /* PE_Question.swift */; };
 		04F878B41D9A2C1D00D621BE /* ReadingQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F878B31D9A2C1D00D621BE /* ReadingQuestionViewController.swift */; };
-		04F878B81D9A68CC00D621BE /* OnTapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F878B71D9A68CC00D621BE /* OnTapViewController.swift */; };
+		04F878B81D9A68CC00D621BE /* PE_OnTapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F878B71D9A68CC00D621BE /* PE_OnTapViewController.swift */; };
 		04F878BB1D9BC27C00D621BE /* PE_PDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F878BA1D9BC27C00D621BE /* PE_PDFViewController.swift */; };
 		04F878BE1D9BC2C100D621BE /* CommonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F878BC1D9BC2C100D621BE /* CommonTableViewCell.swift */; };
 		04F878BF1D9BC2C100D621BE /* CommonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04F878BD1D9BC2C100D621BE /* CommonTableViewCell.xib */; };
@@ -104,6 +106,8 @@
 		046E721C1DD0463200024AC8 /* SFX_UI_capture.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = SFX_UI_capture.wav; path = Resources/SFX_UI_capture.wav; sourceTree = "<group>"; };
 		046E721D1DD0463200024AC8 /* SFX_UI_complete.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = SFX_UI_complete.wav; path = Resources/SFX_UI_complete.wav; sourceTree = "<group>"; };
 		046E721E1DD0463200024AC8 /* SFX_UI_welcome.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = SFX_UI_welcome.wav; path = Resources/SFX_UI_welcome.wav; sourceTree = "<group>"; };
+		047AE0D01DD1DC8F008C0B8E /* PE_OnTapTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PE_OnTapTableViewCell.swift; sourceTree = "<group>"; };
+		047AE0D11DD1DC8F008C0B8E /* PE_OnTapTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PE_OnTapTableViewCell.xib; sourceTree = "<group>"; };
 		047C5DAB1DB4CA9300D435B7 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		04857CA41D98D61E00DFDACE /* PE_ThongTinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PE_ThongTinViewController.swift; sourceTree = "<group>"; };
 		04857CA81D98FD8900DFDACE /* iconEnglish.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iconEnglish.png; sourceTree = "<group>"; };
@@ -122,7 +126,7 @@
 		04B61B0B1D9E126500C43770 /* QuestionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionTableViewCell.xib; sourceTree = "<group>"; };
 		04F1AAF61DA79136006FA87D /* PE_Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PE_Question.swift; path = RealmObject/PE_Question.swift; sourceTree = "<group>"; };
 		04F878B31D9A2C1D00D621BE /* ReadingQuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadingQuestionViewController.swift; sourceTree = "<group>"; };
-		04F878B71D9A68CC00D621BE /* OnTapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnTapViewController.swift; sourceTree = "<group>"; };
+		04F878B71D9A68CC00D621BE /* PE_OnTapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PE_OnTapViewController.swift; sourceTree = "<group>"; };
 		04F878BA1D9BC27C00D621BE /* PE_PDFViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PE_PDFViewController.swift; sourceTree = "<group>"; };
 		04F878BC1D9BC2C100D621BE /* CommonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonTableViewCell.swift; sourceTree = "<group>"; };
 		04F878BD1D9BC2C100D621BE /* CommonTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommonTableViewCell.xib; sourceTree = "<group>"; };
@@ -151,7 +155,7 @@
 			children = (
 				04B61B091D9E0F7700C43770 /* Grammar */,
 				04857CB21D99A89000DFDACE /* Reading */,
-				04F878B71D9A68CC00D621BE /* OnTapViewController.swift */,
+				04F878B71D9A68CC00D621BE /* PE_OnTapViewController.swift */,
 			);
 			name = OnTap;
 			sourceTree = "<group>";
@@ -169,6 +173,8 @@
 				04B61B061D9E0DE500C43770 /* MenuQuestionTableViewCell.xib */,
 				04B61B0A1D9E126500C43770 /* QuestionTableViewCell.swift */,
 				04B61B0B1D9E126500C43770 /* QuestionTableViewCell.xib */,
+				047AE0D01DD1DC8F008C0B8E /* PE_OnTapTableViewCell.swift */,
+				047AE0D11DD1DC8F008C0B8E /* PE_OnTapTableViewCell.xib */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -415,6 +421,7 @@
 				04B61B001D9E006C00C43770 /* PE_SplashScreenViewController.xib in Resources */,
 				046E72211DD0463200024AC8 /* Hướng dẫn đọc hiểu - Tập 1.pdf in Resources */,
 				04F878BF1D9BC2C100D621BE /* CommonTableViewCell.xib in Resources */,
+				047AE0D31DD1DC8F008C0B8E /* PE_OnTapTableViewCell.xib in Resources */,
 				045BFA5A1D8E5D4400A8ADE6 /* GoogleService-Info.plist in Resources */,
 				046E72201DD0463200024AC8 /* background.jpg in Resources */,
 				045BFA491D8E46A700A8ADE6 /* Assets.xcassets in Resources */,
@@ -512,11 +519,12 @@
 				045BFA441D8E46A700A8ADE6 /* PE_ViewController.swift in Sources */,
 				0407A8361D963F630087D994 /* QuestionViewController.swift in Sources */,
 				047C5DAC1DB4CA9300D435B7 /* User.swift in Sources */,
-				04F878B81D9A68CC00D621BE /* OnTapViewController.swift in Sources */,
+				04F878B81D9A68CC00D621BE /* PE_OnTapViewController.swift in Sources */,
 				04B61AFF1D9E006C00C43770 /* PE_SplashScreenViewController.swift in Sources */,
 				046E72161DD0429300024AC8 /* RealmController.swift in Sources */,
 				04B61AFA1D9D1C4A00C43770 /* AnswerTableViewCell.swift in Sources */,
 				045BFA421D8E46A700A8ADE6 /* AppDelegate.swift in Sources */,
+				047AE0D21DD1DC8F008C0B8E /* PE_OnTapTableViewCell.swift in Sources */,
 				04857CB11D99A73000DFDACE /* ReadingViewController.swift in Sources */,
 				046E72151DD0429300024AC8 /* PE_Lesson.swift in Sources */,
 			);

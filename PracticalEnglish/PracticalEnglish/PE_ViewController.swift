@@ -159,11 +159,11 @@ class PE_ViewController: BackgroundViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ShowOnTapSegue" {
-            if let onTapVc = segue.destination as? OnTapViewController {
-                
-            }
-        }
+//        if segue.identifier == "ShowOnTapSegue" {
+//            if let onTapVc = segue.destination as? OnTapViewController {
+//                
+//            }
+//        }
     }
     
     func updateProgressView(){
