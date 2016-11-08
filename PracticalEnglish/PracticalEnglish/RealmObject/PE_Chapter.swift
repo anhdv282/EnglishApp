@@ -19,5 +19,5 @@ class PE_Chapter: Object {
     dynamic var id = 0
     dynamic var content = ""
     dynamic var descriptionChapter = ""
-    let parts = List<PE_Lesson>()
+    var parts = List<PE_Lesson>()
 }

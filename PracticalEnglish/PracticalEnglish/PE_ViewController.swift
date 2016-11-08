@@ -11,23 +11,29 @@ import FBSDKLoginKit
 import FBSDKShareKit
 import FirebaseAuth
 import FirebaseDatabase
-
+import MBProgressHUD
+let kIsDownloadData = "isDownloadData"
 class PE_ViewController: BackgroundViewController {
     
     @IBOutlet weak var loadingView: UIView!
     
+    @IBOutlet weak var lblCountDownload: UILabel!
     @IBOutlet weak var lblLoading: UILabel!
     var loginButton:FBSDKLoginButton = FBSDKLoginButton()
     var timer : Timer?
-    
+    let defaults = UserDefaults.standard
     override func viewDidLoad() {
         super.viewDidLoad()
-        timer = Timer.scheduledTimer(timeInterval: 0.3, target: self, selector: #selector(self.updateProgressView), userInfo: nil, repeats: true)
-        self.requestData()
+        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateProgressView), userInfo: nil, repeats: true)
+        
+        if defaults.bool(forKey: kIsDownloadData) == false {
+            self.requestData()
+        }
     }
     
     func requestData() {
         self.loadingView.isHidden = false
+        MBProgressHUD.showAdded(to: self.view, animated: true)
         let rootRef = FIRDatabase.database().reference()
         let newData = rootRef.child("NewData")
         newData.observe(.value, with: { (snapshot) in
@@ -46,6 +52,7 @@ class PE_ViewController: BackgroundViewController {
                         if let _descriptionChapter = postDict["Description"] as? String {
                             chapter.descriptionChapter = _descriptionChapter
                         }
+                        let peChapter:PE_Chapter = writeDataChapter(chapter: chapter)
                         if let lessonsDict = postDict["Parts"] as? [[String : AnyObject]] {
                             for lessonDict in lessonsDict {
                                 let lesson:Lesson = Lesson()
@@ -56,6 +63,7 @@ class PE_ViewController: BackgroundViewController {
                                 if let _lessonId = lessonDict["Id"] as? Int {
                                     lesson.id = _lessonId
                                 }
+                                let peLesson:PE_Lesson = writeDataLesson(lesson: lesson, peChapter: peChapter)
                                 if let questionsDict = lessonDict["ListQuestion"] as? [[String : AnyObject]] {
                                     for questionDict in questionsDict {
                                         let question:Question = Question()
@@ -80,7 +88,7 @@ class PE_ViewController: BackgroundViewController {
                                         if let a = questionDict["Id"] as? Int {
                                             question.iD = a
                                         }
-                                        writeDataQuestion(question: question)
+                                        writeDataQuestion(question: question, peLesson: peLesson)
                                         questions.append(question)
                                     }
                                     lesson.listQuestion = questions
@@ -93,8 +101,13 @@ class PE_ViewController: BackgroundViewController {
                     data.append(chapter)
                 }
                 self.loadingView.isHidden = true
+                self.timer?.invalidate()
+                MBProgressHUD.hide(for: self.view, animated: true)
+                self.defaults.set(true, forKey: kIsDownloadData)
             }
+            
         }) { (error) in
+            MBProgressHUD.hide(for: self.view, animated: true)
             showAlertView(self, title: "Error", message: "Không thể tải được dữ liệu")
             self.loadingView.isHidden = true
             print(error.localizedDescription)
@@ -154,17 +167,17 @@ class PE_ViewController: BackgroundViewController {
     }
     
     func updateProgressView(){
-        if lblLoading.text == "Loading" {
-            lblLoading.text = "Loading."
+        if lblLoading.text == "Cập nhật" {
+            lblLoading.text = "Cập nhật."
         }
-        else if lblLoading.text == "Loading." {
-            lblLoading.text = "Loading.."
+        else if lblLoading.text == "Cập nhật." {
+            lblLoading.text = "Cập nhật.."
         }
-        else if lblLoading.text == "Loading.." {
-            lblLoading.text = "Loading..."
+        else if lblLoading.text == "Cập nhật.." {
+            lblLoading.text = "Cập nhật..."
         }
-        else if lblLoading.text == "Loading..." {
-            lblLoading.text = "Loading"
+        else if lblLoading.text == "Cập nhật..." {
+            lblLoading.text = "Cập nhật"
         }
     }
 }
