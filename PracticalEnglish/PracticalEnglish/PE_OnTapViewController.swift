@@ -11,10 +11,8 @@ import MBProgressHUD
 import Firebase
 import RealmSwift
 class PE_OnTapViewController: BackgroundViewController {
-    var listQuestionPhatAm:[Question] = [Question]()
-    var listQuestionTrongAm:[Question] = [Question]()
     var listOnTap: Results<PE_Chapter>!
-    
+    var listQuestion: Results<PE_Question>!
     @IBOutlet weak var onTapTableView: UITableView!
     
     override func viewDidLoad() {
@@ -26,8 +24,6 @@ class PE_OnTapViewController: BackgroundViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        listQuestionTrongAm.removeAll()
-        listQuestionPhatAm.removeAll()
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -36,14 +32,13 @@ class PE_OnTapViewController: BackgroundViewController {
     
     func getDataOnTap() {
         let realm = try! Realm()
-        listOnTap = realm.objects(PE_Chapter)
+        self.listOnTap = realm.objects(PE_Chapter.self)
         self.onTapTableView.reloadData()
     }
     
     func pushVC(listQuestion:[Question],lblText:String) {
         let playVC = (self.storyboard!.instantiateViewController(withIdentifier: "PlayViewController") as! PlayViewController)
         playVC.listQuestion = listQuestion
-        playVC.questionText = lblText
         self.navigationController!.pushViewController(playVC, animated: true)
     }
     
@@ -67,7 +62,7 @@ class PE_OnTapViewController: BackgroundViewController {
     }
 }
 
-extension PE_OnTapViewController:UITabBarDelegate,UITableViewDataSource {
+extension PE_OnTapViewController:UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PE_OnTapTableViewCell") as! PE_OnTapTableViewCell
         let list = listOnTap[indexPath.row]
@@ -81,4 +76,30 @@ extension PE_OnTapViewController:UITabBarDelegate,UITableViewDataSource {
         }
         return 0
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let chapter = listOnTap[indexPath.row]
+        
+        if chapter.parts.count > 1 {
+
+            print("Hello")
+        } else if chapter.parts.count == 1 {
+            let lesson = chapter.parts[0]
+            let listQuestion = lesson.listQuestion
+            var listQQ:[Question] = [Question]()
+            for q in listQuestion {
+                var qq:Question = Question()
+                qq.Answer0 = q.answer0
+                qq.Answer1 = q.answer1
+                qq.Answer2 = q.answer2
+                qq.Answer3 = q.answer3
+                qq.iD      = q.id
+                qq.IsCorrect = q.isCorrect
+                qq.state   = QuestionState.NotSelected
+                listQQ.append(qq)
+            }
+            pushVC(listQuestion: listQQ, lblText: "")
+        }
+    }
 }
+
