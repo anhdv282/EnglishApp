@@ -203,7 +203,13 @@ extension PlayViewController:UITableViewDelegate,UITableViewDataSource {
         case 1:
             cellAnswer.content.text = listQuestion[index].answer0
             cellAnswer.headerTitle.text = "A."
-            
+            if listQuestion[index].questionState == 0 {
+                
+            } else if listQuestion[index].questionState == 1 {
+                
+            } else {
+                
+            }
             cellAnswer.setModel()
             return cellAnswer
         case 2:
