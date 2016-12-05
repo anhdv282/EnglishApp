@@ -88,6 +88,7 @@ class PE_ViewController: BackgroundViewController {
                                         if let a = questionDict["Id"] as? Int {
                                             question.iD = a
                                         }
+                                        question.state = QuestionState.NotSelected
                                         writeDataQuestion(question: question, peLesson: peLesson)
                                         questions.append(question)
                                     }

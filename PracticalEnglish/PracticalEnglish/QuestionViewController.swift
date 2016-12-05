@@ -106,7 +106,7 @@ extension QuestionViewController:UITableViewDataSource,UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         SoundController.playClickButton()
         let playVC = (self.storyboard!.instantiateViewController(withIdentifier: "PlayViewController") as! PlayViewController)
-        playVC.listQuestion = listMainQuestion[indexPath.row].listQuestion
+//        playVC.listQuestion = listMainQuestion[indexPath.row].listQuestion
         playVC.questionText = "Choose a,b,c or d that best completes the sentence"
         self.navigationController!.pushViewController(playVC, animated: true)
     }

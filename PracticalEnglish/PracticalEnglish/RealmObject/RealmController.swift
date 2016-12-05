@@ -21,6 +21,8 @@ func writeDataQuestion(question:Question,peLesson:PE_Lesson) {
     q.answer3   = question.Answer3
     q.id        = question.iD
     q.isCorrect = question.IsCorrect
+    q.questionState = (question.state == .NotSelected) ? 0 : (question.state == .RightSelected) ? 1 : 2
+    q.selected = -1
     // Get the default Realm
     let realm = try! Realm()
     // You only need to do this once (per thread)
@@ -30,6 +32,15 @@ func writeDataQuestion(question:Question,peLesson:PE_Lesson) {
         peLesson.listQuestion.append(q)
         realm.add(q)
     }
+}
+
+func updateDataQuestion(question:PE_Question,questionState:Int) {
+    // Get the default Realm
+    let realm = try! Realm()
+     try! realm.write {
+        question.questionState = questionState
+    }
+    
 }
 
 func writeDataChapter(chapter:Chapter)->PE_Chapter {

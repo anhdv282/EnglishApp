@@ -36,9 +36,10 @@ class PE_OnTapViewController: BackgroundViewController {
         self.onTapTableView.reloadData()
     }
     
-    func pushVC(listQuestion:[Question],lblText:String) {
+    func pushVC(listQuestion:[PE_Question],lblText:String) {
         let playVC = (self.storyboard!.instantiateViewController(withIdentifier: "PlayViewController") as! PlayViewController)
         playVC.listQuestion = listQuestion
+        playVC.questionText = lblText
         self.navigationController!.pushViewController(playVC, animated: true)
     }
     
@@ -86,19 +87,11 @@ extension PE_OnTapViewController:UITableViewDelegate,UITableViewDataSource {
         } else if chapter.parts.count == 1 {
             let lesson = chapter.parts[0]
             let listQuestion = lesson.listQuestion
-            var listQQ:[Question] = [Question]()
+            var listQQ:[PE_Question] = [PE_Question]()
             for q in listQuestion {
-                var qq:Question = Question()
-                qq.Answer0 = q.answer0
-                qq.Answer1 = q.answer1
-                qq.Answer2 = q.answer2
-                qq.Answer3 = q.answer3
-                qq.iD      = q.id
-                qq.IsCorrect = q.isCorrect
-                qq.state   = QuestionState.NotSelected
-                listQQ.append(qq)
+                listQQ.append(q)
             }
-            pushVC(listQuestion: listQQ, lblText: "")
+            pushVC(listQuestion: listQQ, lblText: listOnTap[indexPath.row].descriptionChapter)
         }
     }
 }

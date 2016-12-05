@@ -18,7 +18,7 @@ class PlayViewController: BackgroundViewController {
     @IBOutlet weak var lblText: UILabel!
     var questionText = ""
 //    var grammar:Grammar = Grammar()
-    var listQuestion:[Question] = [Question]()
+    var listQuestion:[PE_Question] = [PE_Question]()
     var index:Int = 0
     var mark:Int = 0
     private var isInsertingCellsToTop: Bool = false
@@ -55,7 +55,7 @@ class PlayViewController: BackgroundViewController {
             // add an action (button)
             alert.addAction(UIAlertAction(title: "Trở về", style: .default, handler: { (action) in
                 for q in self.listQuestion {
-                    q.state = .NotSelected
+                    q.questionState = 0// .NotSelected
                 }
                 self.navigationController?.popViewController(animated: true)
             }))
@@ -95,7 +95,7 @@ class PlayViewController: BackgroundViewController {
                 // add an action (button)
                 alert.addAction(UIAlertAction(title: "Trở về", style: .default, handler: { (action) in
                     for q in self.listQuestion {
-                        q.state = .NotSelected
+                        q.questionState = 0// .NotSelected
                     }
                     self.navigationController?.popViewController(animated: true)
                 }))
@@ -120,7 +120,7 @@ extension PlayViewController:UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let rightAnswer = listQuestion[index].IsCorrect + 1
+        let rightAnswer = listQuestion[index].isCorrect + 1
         let path2:IndexPath = IndexPath.init(row: rightAnswer, section: 0)
         let cell = tableView.cellForRow(at: indexPath) as! AnswerTableViewCell
         let cellR = tableView.cellForRow(at: path2) as! AnswerTableViewCell
@@ -128,58 +128,59 @@ extension PlayViewController:UITableViewDelegate,UITableViewDataSource {
         case 0:
             break
         case 1:
-            if listQuestion[index].IsCorrect == 0 {
+            if listQuestion[index].isCorrect == 0 {
                 cell.borderView.backgroundColor = colorRight
-                listQuestion[index].state = .RightSelected
+                updateDataQuestion(question: listQuestion[index],questionState: 1)
                 mark += 1
                 SoundController.playRight()
                 
             } else {
                 cell.borderView.backgroundColor = colorWrong
                 cellR.borderView.backgroundColor = colorRight
-                listQuestion[index].state = .WrongSelected
+                updateDataQuestion(question: listQuestion[index],questionState: 2)
                 SoundController.playWrong()
             }
             
         case 2:
-            if listQuestion[index].IsCorrect == 1 {
+            if listQuestion[index].isCorrect == 1 {
                 cell.borderView.backgroundColor = colorRight
-                listQuestion[index].state = .RightSelected
+                updateDataQuestion(question: listQuestion[index],questionState: 1)
                 mark += 1
                 SoundController.playRight()
             } else {
                 cell.borderView.backgroundColor = colorWrong
                 cellR.borderView.backgroundColor = colorRight
-                listQuestion[index].state = .WrongSelected
+                updateDataQuestion(question: listQuestion[index],questionState: 2)
                 SoundController.playWrong()
             }
         case 3:
-            if listQuestion[index].IsCorrect == 2 {
+            if listQuestion[index].isCorrect == 2 {
                 cell.borderView.backgroundColor = colorRight
-                listQuestion[index].state = .RightSelected
+                updateDataQuestion(question: listQuestion[index],questionState: 1)
                 mark += 1
                 SoundController.playRight()
             } else {
                 cell.borderView.backgroundColor = colorWrong
                 cellR.borderView.backgroundColor = colorRight
-                listQuestion[index].state = .WrongSelected
+                updateDataQuestion(question: listQuestion[index],questionState: 2)
                 SoundController.playWrong()
             }
         case 4:
-            if listQuestion[index].IsCorrect == 3 {
+            if listQuestion[index].isCorrect == 3 {
                 cell.borderView.backgroundColor = colorRight
-                listQuestion[index].state = .RightSelected
+                updateDataQuestion(question: listQuestion[index],questionState: 1)
                 mark += 1
                 SoundController.playRight()
             } else {
                 cell.borderView.backgroundColor = colorWrong
                 cellR.borderView.backgroundColor = colorRight
-                listQuestion[index].state = .WrongSelected
+                updateDataQuestion(question: listQuestion[index],questionState: 2)
                 SoundController.playWrong()
             }
         default:
             break
         }
+        
         
         self.lblMark.text = "\(mark)/\(listQuestion.count)"
         self.myTableView.isUserInteractionEnabled = false
@@ -197,25 +198,26 @@ extension PlayViewController:UITableViewDelegate,UITableViewDataSource {
         let cellAnswer = tableView.dequeueReusableCell(withIdentifier: "AnswerTableViewCell") as! AnswerTableViewCell
         switch indexPath.row {
         case 0:
-            cellQuestion.questionContent.text = listQuestion[index].Question
+            cellQuestion.questionContent.text = listQuestion[index].question
             return cellQuestion
         case 1:
-            cellAnswer.content.text = listQuestion[index].Answer0
+            cellAnswer.content.text = listQuestion[index].answer0
             cellAnswer.headerTitle.text = "A."
+            
             cellAnswer.setModel()
             return cellAnswer
         case 2:
-            cellAnswer.content.text = listQuestion[index].Answer1
+            cellAnswer.content.text = listQuestion[index].answer1
             cellAnswer.headerTitle.text = "B."
             cellAnswer.setModel()
             return cellAnswer
         case 3:
-            cellAnswer.content.text = listQuestion[index].Answer2
+            cellAnswer.content.text = listQuestion[index].answer2
             cellAnswer.headerTitle.text = "C."
             cellAnswer.setModel()
             return cellAnswer
         case 4:
-            cellAnswer.content.text = listQuestion[index].Answer3
+            cellAnswer.content.text = listQuestion[index].answer3
             cellAnswer.headerTitle.text = "D."
             cellAnswer.setModel()
             return cellAnswer
@@ -240,11 +242,11 @@ extension PlayViewController:UICollectionViewDelegate,UICollectionViewDataSource
         } else {
             cell.borderBgView.layer.borderColor = UIColor.white.cgColor
         }
-        if listQuestion[indexPath.row].state == .NotSelected {
+        if listQuestion[indexPath.row].questionState == 0 {
             cell.borderBgView.backgroundColor = colorGray
-        } else if listQuestion[indexPath.row].state == .RightSelected {
+        } else if listQuestion[indexPath.row].questionState == 1 {
             cell.borderBgView.backgroundColor = colorRight
-        } else if listQuestion[indexPath.row].state == .WrongSelected {
+        } else if listQuestion[indexPath.row].questionState == 2 {
             cell.borderBgView.backgroundColor = colorWrong
         } else {
             cell.borderBgView.backgroundColor = colorGray
@@ -253,4 +255,7 @@ extension PlayViewController:UICollectionViewDelegate,UICollectionViewDataSource
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+    }
 }
